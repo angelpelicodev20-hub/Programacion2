@@ -1,0 +1,32 @@
+@startuml Ejercicio13_DiagramaClases
+class Persona {
+    - nombre: String
+    - edad: int
+    - correo: String
+    + Persona(nombre: String, edad: int, correo: String)
+    + getNombre(): String
+    + getEdad(): int
+    + getCorreo(): String
+    + mostrarDatos(): void
+}
+
+class Estudiante {
+    - carnet: String
+    - promedio: double
+    + Estudiante(nombre: String, edad: int, correo: String, carnet: String)
+    + inscribirCurso(curso: Curso): void
+    + mostrarDatos(): void
+}
+
+class Curso {
+    - codigo: String
+    - nombre: String
+    - creditos: int
+    + Curso(codigo: String, nombre: String, creditos: int)
+    + getNombre(): String
+    + mostrarInformacion(): void
+}
+
+Persona <|-- Estudiante
+Estudiante "1" -- "0..*" Curso : inscrito en >
+@enduml

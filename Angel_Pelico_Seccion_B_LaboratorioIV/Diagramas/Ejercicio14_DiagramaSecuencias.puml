@@ -1,0 +1,18 @@
+@startuml Ejercicio14_DiagramaSecuencias.
+actor Usuario
+participant "Interfaz" as UI
+participant "SistemaEstudiantes" as Sistema
+participant "BaseDeDatos" as BD
+
+Usuario -> UI : Solicita información del estudiante (carnet)
+UI -> Sistema : consultarEstudiante(carnet)
+Sistema -> BD : buscarPorCarnet(carnet)
+BD --> Sistema : datos del estudiante
+alt estudiante encontrado
+    Sistema --> UI : datosEstudiante
+    UI --> Usuario : Muestra información del estudiante
+else estudiante no encontrado
+    Sistema --> UI : mensaje de error
+    UI --> Usuario : Muestra "Estudiante no encontrado"
+end
+@enduml
