@@ -1,0 +1,19 @@
+# Compilación de Maven
+target/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+bin/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
